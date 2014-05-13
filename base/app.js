@@ -21,6 +21,7 @@ app.get('/', routes.index);
 app.get('/tweets', routes.tweets);
 app.get('/instagram', routes.instagram);
 app.get('/foursquare', routes.foursquare);
+app.get('/socialwall', routes.socialfeed);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

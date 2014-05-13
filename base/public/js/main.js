@@ -45,11 +45,11 @@ var SOCIAL_WALL = {
     },
 
     getTweets: function() {
-        this.doRequest('/tweets', function(tweets) {
+        this.doRequest('/socialwall', function(tweets) {
             $.each(tweets, function(i, tweet) {
                 // console.log(tweet);
                 var tweetText = '@' + tweet.user.screen_name + ': ' + tweet.text;
-                this.addToWall('twitter', tweetText);
+                this.addToWall(tweet.network, tweetText);
             }.bind(this))
         }.bind(this));
     }
