@@ -27,6 +27,147 @@ var twit = new twitter({
 
 //var foursquare = require('node-foursquare')(foursquareConfig);
 
+function getTwitterData() {
+	var data = [
+  {
+		"network": "twitter",
+      "text": "You notice how bagel have a hole in them? But where is the extra bagel go????? WAK UP AMERICA. #GovormentBaggelConspiracy",
+      "user": {
+          "id": 448476934,
+          "name": "birdsrightsactivist",
+          "screen_name": "ProBirdRights",
+      }
+  },
+  {
+		"network": "twitter",
+      "text": "My ice cram cone melt before I have it all. THANKS GLOBAL WARMING ALARMISTS. #scienceKills(icecram)",
+      "user": {
+          "id": 448476934,
+          "name": "birdsrightsactivist",
+          "screen_name": "ProBirdRights",
+      }
+  },
+  {
+		"network": "twitter",
+      "text": "Hello youth: I am a cool one just like you I wear a backward hat. Choose bird not drug. Skateboards.",
+      "user": {
+          "id": 448476934,
+          "name": "birdsrightsactivist",
+          "screen_name": "ProBirdRights",
+      }
+  },
+  {
+		"network": "twitter",
+      "text": "Dear medical: what if instead of \"doctor\" and \"obamahealth\" we have breadicine? #iHaveCuredScience",
+      "user": {
+          "id": 448476934,
+          "name": "birdsrightsactivist",
+          "screen_name": "ProBirdRights",
+      }
+  },
+  {
+		"network": "twitter",
+      "text": "I should be the head of things.",
+      "user": {
+          "id": 448476934,
+          "name": "birdsrightsactivist",
+          "screen_name": "ProBirdRights",
+      }
+	}
+	];
+	return data;
+}
+function getInstagramData() {
+	var data = [
+  {
+		"network": "instagram",
+      "text": "You notice how bagel have a hole in them? But where is the extra bagel go????? WAK UP AMERICA. #GovormentBaggelConspiracy",
+      "user": {
+          "id": 448476934,
+          "name": "birdsrightsactivist",
+          "screen_name": "ProBirdRights",
+      }
+  },
+  {
+		"network": "instagram",
+      "text": "You notice how bagel have a hole in them? But where is the extra bagel go????? WAK UP AMERICA. #GovormentBaggelConspiracy",
+      "user": {
+          "id": 448476934,
+          "name": "birdsrightsactivist",
+          "screen_name": "ProBirdRights",
+      }
+  },
+  {
+		"network": "instagram",
+      "text": "You notice how bagel have a hole in them? But where is the extra bagel go????? WAK UP AMERICA. #GovormentBaggelConspiracy",
+      "user": {
+          "id": 448476934,
+          "name": "birdsrightsactivist",
+          "screen_name": "ProBirdRights",
+      }
+  },
+  {
+		"network": "instagram",
+      "text": "You notice how bagel have a hole in them? But where is the extra bagel go????? WAK UP AMERICA. #GovormentBaggelConspiracy",
+      "user": {
+          "id": 448476934,
+          "name": "birdsrightsactivist",
+          "screen_name": "ProBirdRights",
+      }
+  },
+  {
+		"network": "instagram",
+      "text": "You notice how bagel have a hole in them? But where is the extra bagel go????? WAK UP AMERICA. #GovormentBaggelConspiracy",
+      "user": {
+          "id": 448476934,
+          "name": "birdsrightsactivist",
+          "screen_name": "ProBirdRights",
+      }
+  },
+  {
+		"network": "instagram",
+      "text": "You notice how bagel have a hole in them? But where is the extra bagel go????? WAK UP AMERICA. #GovormentBaggelConspiracy",
+      "user": {
+          "id": 448476934,
+          "name": "birdsrightsactivist",
+          "screen_name": "ProBirdRights",
+      }
+  }
+	];
+	return data;
+}
+function getFourSquareData() {
+	var data = [
+  {
+		"network": "foursquare",
+      "text": "You notice how bagel have a hole in them? But where is the extra bagel go????? WAK UP AMERICA. #GovormentBaggelConspiracy",
+      "user": {
+          "id": 448476934,
+          "name": "birdsrightsactivist",
+          "screen_name": "ProBirdRights",
+      }
+  },
+  {
+		"network": "foursquare",
+      "text": "You notice how bagel have a hole in them? But where is the extra bagel go????? WAK UP AMERICA. #GovormentBaggelConspiracy",
+      "user": {
+          "id": 448476934,
+          "name": "birdsrightsactivist",
+          "screen_name": "ProBirdRights",
+      }
+  }
+	];
+	return data;
+}
+
+function getSocialData() {
+	var tweets = getTwitterData(),
+	instagrams = getInstagramData(),
+	foursquares = getFourSquareData();
+	
+	return [].concat(tweets, instagrams, foursquares);
+}
+
 exports.index = function(req, res){
   res.render('index', { title: 'Social Wall' });
 };
@@ -50,119 +191,7 @@ exports.foursquare = function(req, res) {
 };
 
 exports.socialfeed = function(req, res) {
-	
-	var data = [
-    {
-			"network": "twitter",
-        "text": "You notice how bagel have a hole in them? But where is the extra bagel go????? WAK UP AMERICA. #GovormentBaggelConspiracy",
-        "user": {
-            "id": 448476934,
-            "name": "birdsrightsactivist",
-            "screen_name": "ProBirdRights",
-        }
-    },
-    {
-			"network": "twitter",
-        "text": "My ice cram cone melt before I have it all. THANKS GLOBAL WARMING ALARMISTS. #scienceKills(icecram)",
-        "user": {
-            "id": 448476934,
-            "name": "birdsrightsactivist",
-            "screen_name": "ProBirdRights",
-        }
-    },
-    {
-			"network": "twitter",
-        "text": "Hello youth: I am a cool one just like you I wear a backward hat. Choose bird not drug. Skateboards.",
-        "user": {
-            "id": 448476934,
-            "name": "birdsrightsactivist",
-            "screen_name": "ProBirdRights",
-        }
-    },
-    {
-			"network": "twitter",
-        "text": "Dear medical: what if instead of \"doctor\" and \"obamahealth\" we have breadicine? #iHaveCuredScience",
-        "user": {
-            "id": 448476934,
-            "name": "birdsrightsactivist",
-            "screen_name": "ProBirdRights",
-        }
-    },
-    {
-			"network": "twitter",
-        "text": "I should be the head of things.",
-        "user": {
-            "id": 448476934,
-            "name": "birdsrightsactivist",
-            "screen_name": "ProBirdRights",
-        }
-		},
-    {
-			"network": "instagram",
-        "text": "You notice how bagel have a hole in them? But where is the extra bagel go????? WAK UP AMERICA. #GovormentBaggelConspiracy",
-        "user": {
-            "id": 448476934,
-            "name": "birdsrightsactivist",
-            "screen_name": "ProBirdRights",
-        }
-    },
-    {
-			"network": "instagram",
-        "text": "You notice how bagel have a hole in them? But where is the extra bagel go????? WAK UP AMERICA. #GovormentBaggelConspiracy",
-        "user": {
-            "id": 448476934,
-            "name": "birdsrightsactivist",
-            "screen_name": "ProBirdRights",
-        }
-    },
-    {
-			"network": "instagram",
-        "text": "You notice how bagel have a hole in them? But where is the extra bagel go????? WAK UP AMERICA. #GovormentBaggelConspiracy",
-        "user": {
-            "id": 448476934,
-            "name": "birdsrightsactivist",
-            "screen_name": "ProBirdRights",
-        }
-    },
-    {
-			"network": "instagram",
-        "text": "You notice how bagel have a hole in them? But where is the extra bagel go????? WAK UP AMERICA. #GovormentBaggelConspiracy",
-        "user": {
-            "id": 448476934,
-            "name": "birdsrightsactivist",
-            "screen_name": "ProBirdRights",
-        }
-    },
-    {
-			"network": "instagram",
-        "text": "You notice how bagel have a hole in them? But where is the extra bagel go????? WAK UP AMERICA. #GovormentBaggelConspiracy",
-        "user": {
-            "id": 448476934,
-            "name": "birdsrightsactivist",
-            "screen_name": "ProBirdRights",
-        }
-    },
-    {
-			"network": "instagram",
-        "text": "You notice how bagel have a hole in them? But where is the extra bagel go????? WAK UP AMERICA. #GovormentBaggelConspiracy",
-        "user": {
-            "id": 448476934,
-            "name": "birdsrightsactivist",
-            "screen_name": "ProBirdRights",
-        }
-    },
-    {
-			"network": "foursquare",
-        "text": "You notice how bagel have a hole in them? But where is the extra bagel go????? WAK UP AMERICA. #GovormentBaggelConspiracy",
-        "user": {
-            "id": 448476934,
-            "name": "birdsrightsactivist",
-            "screen_name": "ProBirdRights",
-        }
-    }
-]
-
-	
+	var data = getSocialData();
 	
 	res.json(data);
 };
